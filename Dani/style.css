@@ -1,0 +1,395 @@
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+    --cor-fundo-principal: #1a1a1a; /* Preto quase absoluto */
+    --cor-texto-principal: #ffffff; /* Branco puro */
+    --cor-detalhe-amor: #e74c3c; /* Vermelho vibrante */
+    --cor-card-fundo: #333333; /* Cinza escuro para cards */
+    --cor-sombra: rgba(231, 76, 60, 0.5); /* Sombra vermelha */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+    position: relative;
+    padding: 20px;
+}
+
+/* Corações flutuantes */
+.heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Permite clicar nos elementos abaixo */
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+
+.heart-emoji {
+    position: absolute;
+    font-size: 2em;
+    color: var(--cor-detalhe-amor);
+    animation: floatUp 15s infinite ease-in;
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.fixed-heart {
+    opacity: 0.7;
+    animation: none; /* Não anima os corações fixos */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10vh);
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--cor-card-fundo);
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--cor-sombra);
+}
+
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Countdown Section */
+.countdown-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: var(--cor-card-fundo);
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--cor-sombra);
+}
+
+.countdown-card {
+    background-color: var(--cor-fundo-principal);
+    border: 2px solid var(--cor-detalhe-amor);
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 180px; /* Flexível, mas com largura mínima */
+    min-width: 120px;
+    box-shadow: 0 0 15px var(--cor-detalhe-amor);
+    transition: transform 0.3s ease;
+}
+
+.countdown-card:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-card span {
+    display: block;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--cor-detalhe-amor);
+    margin-bottom: 5px;
+}
+
+.countdown-card p {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Message Section */
+.message-section {
+    background-color: var(--cor-card-fundo);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 20px var(--cor-sombra);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--cor-detalhe-amor);
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px var(--cor-detalhe-amor);
+}
+
+.message-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8em;
+    color: var(--cor-detalhe-amor);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.message-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: justify;
+    padding: 0 15px;
+}
+
+/* NEW: Carousel Section (Formato Story) */
+.carousel-section {
+    background-color: var(--cor-card-fundo);
+    border-radius: 15px;
+    padding: 20px; /* Reduzido o padding geral */
+    box-shadow: 0 0 20px var(--cor-sombra);
+    margin-bottom: 30px; /* Reduzida a margem inferior */
+    position: relative;
+    text-align: center; /* Centralizar o título */
+}
+
+.carousel-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em; /* Título menor */
+    color: var(--cor-detalhe-amor);
+    margin-bottom: 15px; /* Margem menor para o título */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.carousel-container {
+    position: relative;
+    width: 50%; /* Largura menor do carrossel (ajuste conforme necessário) */
+    max-width: 300px; /* Largura máxima menor */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid var(--cor-detalhe-amor);
+    box-shadow: 0 0 25px var(--cor-detalhe-amor);
+    aspect-ratio: 9 / 16; /* Define a proporção vertical (largura / altura = 9 / 16) */
+}
+
+.carousel-track {
+    display: flex;
+    width: calc(300% + 2 * 30px); /* Ajusta a largura para 3 imagens + espaçamento */
+    transform: translateX(0); /* Garante que comece na primeira imagem */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-img {
+    width: calc(100% / 3); /* Cada imagem ocupa 1/3 da largura do track */
+    height: auto; /* A altura se ajusta à proporção do container */
+    object-fit: cover; /* Preenche o container mantendo a proporção da imagem */
+    flex-shrink: 0;
+    border-radius: 0; /* Remova a borda arredondada individual da imagem */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--cor-texto-principal);
+    border: none;
+    padding: 8px 12px; /* Botões menores */
+    cursor: pointer;
+    font-size: 1.5em; /* Ícones menores */
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn.prev {
+    left: 5px; /* Mais perto da borda */
+}
+
+.carousel-btn.next {
+    right: 5px; /* Mais perto da borda */
+}
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px; /* Margem menor para os pontos */
+}
+
+.dot {
+    display: inline-block;
+    width: 8px; /* Pontos menores */
+    height: 8px; /* Pontos menores */
+    margin: 0 3px; /* Espaçamento menor */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--cor-detalhe-amor);
+    border: 1px solid var(--cor-detalhe-amor); /* Borda menor */
+    box-shadow: 0 0 5px var(--cor-detalhe-amor); /* Sombra menor */
+}
+
+/* ... (restante do seu CSS) ... */
+
+/* Responsividade para o carrossel em telas menores */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 70%; /* Um pouco maior em telas menores */
+        max-width: 350px;
+    }
+    .carousel-img {
+        height: auto; /* A altura se ajusta */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        width: 85%; /* Ocupa mais largura em telas pequenas */
+        max-width: 280px;
+    }
+    .carousel-img {
+        height: auto; /* A altura se ajusta */
+    }
+    .carousel-btn {
+        font-size: 1.2em; /* Botões ainda menores */
+        padding: 6px 10px;
+    }
+}
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--cor-detalhe-amor);
+    border: 2px solid var(--cor-detalhe-amor);
+    box-shadow: 0 0 8px var(--cor-detalhe-amor);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+    .countdown-card span {
+        font-size: 2.8em;
+    }
+    .message-section h2 {
+        font-size: 2.2em;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    .carousel-container {
+        width: 95%; /* Ocupa mais espaço em telas menores */
+    }
+    .carousel-img {
+        height: 300px; /* Altura ajustada */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .countdown-card {
+        flex: 1 1 100%; /* Cartões em coluna única em telas pequenas */
+    }
+    .countdown-card span {
+        font-size: 2.5em;
+    }
+    .message-section h2 {
+        font-size: 1.8em;
+    }
+    .message-section p {
+        font-size: 1em;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    .carousel-img {
+        height: 250px; /* Altura ajustada */
+    }
+    .carousel-btn {
+        font-size: 1.5em; /* Botões menores */
+        padding: 8px 12px;
+    }
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #8B0000; /* Um vermelho escuro elegante */
+    font-size: 1.8em;
+    color: var(--cor-detalhe-amor);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+.message-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #8B0000; /* Um vermelho escuro elegante */
+    font-size: 2.8em;
+    color: var(--cor-detalhe-amor);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
