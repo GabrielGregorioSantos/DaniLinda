@@ -351,6 +351,70 @@ footer {
         height: 8px;
     }
 }
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+    .countdown-card span {
+        font-size: 2.8em;
+    }
+    .message-section h2 {
+        font-size: 2.2em;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    /* Carrossel em telas menores */
+    .carousel-container {
+        width: 80%; /* Mais largura para o carrossel em tablets */
+        max-width: 350px; /* Ainda limita um pouco */
+    }
+    .carousel-btn {
+        font-size: 1.5em; /* Botões um pouco menores */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .countdown-card {
+        flex: 1 1 100%;
+    }
+    .countdown-card span {
+        font-size: 2.5em;
+    }
+    .message-section h2 {
+        font-size: 1.8em;
+    }
+    .message-section p {
+        font-size: 1em;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    /* Carrossel em celulares */
+    .carousel-container {
+        width: 95%; /* Ocupa quase toda a largura do celular */
+        max-width: 280px; /* Limite caso seja um celular muito grande */
+    }
+    .carousel-btn {
+        font-size: 1.2em; /* Botões menores para não atrapalhar */
+        padding: 6px 10px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 header h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
