@@ -83,7 +83,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive; /* Usando a fonte importada */
     font-size: 3.5em;
     color: var(--cor-detalhe-amor);
     margin-bottom: 10px;
@@ -144,7 +144,7 @@ main {
     letter-spacing: 1px;
 }
 
-/* NEW: Carousel Section (Formato Story) */
+/* Carousel Section (Formato Story) */
 .carousel-section {
     background-color: var(--cor-card-fundo);
     border-radius: 15px;
@@ -156,7 +156,7 @@ main {
 }
 
 .carousel-section h2 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive; /* Usando a fonte importada */
     font-size: 2em;
     color: var(--cor-detalhe-amor);
     margin-bottom: 15px;
@@ -243,7 +243,8 @@ main {
 .message-section {
     background-color: var(--cor-card-fundo);
     border-radius: 15px;
-    padding: 40px;
+    /* Ajustes para dar mais "folga" ao texto */
+    padding: 30px 25px; /* Diminuído o padding vertical e adicionado horizontal */
     box-shadow: 0 0 20px var(--cor-sombra);
     line-height: 1.6;
     margin-bottom: 40px;
@@ -260,7 +261,7 @@ main {
 }
 
 .message-section h2 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive; /* Usando a fonte importada */
     font-size: 2.8em;
     color: var(--cor-detalhe-amor);
     margin-bottom: 20px;
@@ -271,7 +272,7 @@ main {
     font-size: 1.1em;
     margin-bottom: 15px;
     text-align: justify;
-    padding: 0 15px;
+    padding: 0; /* Removido o padding horizontal dos parágrafos, a seção já cuida disso */
 }
 
 .message-section h3 {
@@ -312,68 +313,9 @@ footer {
     .carousel-btn {
         font-size: 1.5em; /* Botões um pouco menores */
     }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2.2em;
-    }
-    header p {
-        font-size: 1em;
-    }
-    .countdown-card {
-        flex: 1 1 100%;
-    }
-    .countdown-card span {
-        font-size: 2.5em;
-    }
-    .message-section h2 {
-        font-size: 1.8em;
-    }
-    .message-section p {
-        font-size: 1em;
-    }
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-    /* Carrossel em celulares */
-    .carousel-container {
-        width: 95%; /* Ocupa quase toda a largura do celular */
-        max-width: 280px; /* Limite caso seja um celular muito grande */
-    }
-    .carousel-btn {
-        font-size: 1.2em; /* Botões menores para não atrapalhar */
-        padding: 6px 10px;
-    }
-    .dot {
-        width: 8px;
-        height: 8px;
-    }
-}
-
-/* Responsividade geral */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.8em;
-    }
-    .countdown-card span {
-        font-size: 2.8em;
-    }
-    .message-section h2 {
-        font-size: 2.2em;
-    }
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-    /* Carrossel em telas menores */
-    .carousel-container {
-        width: 80%; /* Mais largura para o carrossel em tablets */
-        max-width: 350px; /* Ainda limita um pouco */
-    }
-    .carousel-btn {
-        font-size: 1.5em; /* Botões um pouco menores */
+    /* Ajuste para a seção de mensagem em tablets */
+    .message-section {
+        padding: 25px 20px; /* Um pouco menos de padding nas laterais */
     }
 }
 
@@ -393,8 +335,13 @@ footer {
     .message-section h2 {
         font-size: 1.8em;
     }
+    /* Ajuste para a seção de mensagem em celulares */
+    .message-section {
+        padding: 20px 15px; /* Ajuste o padding da seção para celular */
+    }
     .message-section p {
         font-size: 1em;
+        /* Padding dos parágrafos já é 0, confiando no padding da seção */
     }
     .profile-pic {
         width: 120px;
@@ -413,23 +360,4 @@ footer {
         width: 8px;
         height: 8px;
     }
-}
-
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #8B0000; /* Um vermelho escuro elegante */
-    font-size: 1.8em;
-    color: var(--cor-detalhe-amor);
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-}
-.message-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #8B0000; /* Um vermelho escuro elegante */
-    font-size: 2.8em;
-    color: var(--cor-detalhe-amor);
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
